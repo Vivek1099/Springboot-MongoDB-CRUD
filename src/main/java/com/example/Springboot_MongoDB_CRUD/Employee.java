@@ -9,7 +9,7 @@ public class Employee
 	@Id
 	int empid;
 	int empage;
-	String empname;
+	String name;
 	public int getEmpid() {
 		return empid;
 	}
@@ -22,11 +22,11 @@ public class Employee
 	public void setEmpage(int empage) {
 		this.empage = empage;
 	}
-	public String getEmpname() {
-		return empname;
+	public String getName() {
+		return name;
 	}
-	public void setEmpname(String empname) {
-		this.empname = empname;
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

@@ -50,15 +50,18 @@ public class EmployeeController
 		return "Data deleted";
 	}
 	
-//	@GetMapping("byname/{empname}")
-//	List<Employee> Byname(@PathVariable String empname)
-//	{
-//		return erepo.findByname(empname);
-//	}
-//	
-	@GetMapping("getid/{empid}")
-	Employee getId(@PathVariable int empid)
+	@GetMapping("byname/{name}")
+	List<Employee> Byname(@PathVariable String name)
 	{
-		return erepo.getById(empid);
+		return erepo.findByName(name);
 	}
+	
+	@PostMapping("/update/{id}")
+	public Employee update(@RequestBody Employee emp, @PathVariable int id)
+	{
+		Employee e=erepo.findById(id).get();
+		e.setEmpage(emp.getEmpage());
+		return erepo.save(e);
+	}
+	
 }
